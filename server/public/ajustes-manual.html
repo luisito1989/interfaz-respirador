@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Control Asistido - COMARPMG</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/logo.jpg" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/ajustes-manual.css">
+    <link rel="stylesheet" href="css/fondomorado.css">
+    <link rel="stylesheet" href="font/css/fontello.css">
+    <link href="css/numpad.css" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+  <body>
+
+    <a id="stop" class="stop btn btn-danger" role="button" style="color: white">Detener</a>
+    <a id="exit" class="icon-cancel exit" role="button" href="index.html"></a>
+    <!--<a id="shutdownButton" class="icon-off-1 shutdownButton" role="button" style="color: white" data-toggle="modal" data-target="#modalShotdown"></a>-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalHeaderText">Error</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h5 class="modal-body" id="modalBodyText">Error</h5>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal -->
+
+    <div class="container">
+    <div class="row justify-content-center align-self-center">
+        <form id="form" class="border border-light p-5 contenForm" action="">
+
+        <p id="titulo" class="h2 mb-4 text-center">Campos de calibración</p>
+
+        <div class="form-row space05">
+            <div class="col">
+                <label>Arduino 1 / Campo 1</label>
+                <input id="a1c1" type="text" class="form-control" placeholder="">
+            </div>
+            <div class="col">
+                <label>Arduino 2 / Campo 1</label>
+                <input id="a2c1" type="text" class="form-control mr-1">
+            </div>
+        </div>
+
+        <div class="form-row space05">
+            <div class="col">
+                <label>Arduino 1 / Campo 2</label>
+                <input id="a1c2" type="text" class="form-control" placeholder="">
+            </div>
+            <div class="col">
+                <label>Arduino 2 / Campo 2</label>
+                <input id="a2c2" type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+
+        <div class="form-row space05 align-middle">
+            <div class="col">
+                <a href="calibracion-auto-a1.html" class="btn btn-success opcBtn" data-dismiss="modal">Calibración A1</a>
+            </div>
+            <div class="col ">
+                <a href="calibracion-auto-a2.html" class="btn btn-success opcBtn" data-dismiss="modal">Calibración A2</a>
+            </div>
+        </div>
+
+        <div class="form-row opcBttn">
+            <button id="sendData" class="btn btn-success opcButton" data-dismiss="modal">Guardar</button>
+        </div>
+
+        </form>
+        <div class="logo"></div>
+
+    </div>
+    
+    </div>
+        <script src="socket.io/socket.io.js" charset="utf-8"></script>
+        <script type="module" src="js/ajustes.js" charset="utf-8"></script>
+        <script type="module" src="js/botonstop.js" charset="utf-8"></script>
+        <!-- <script type="module" src="js/botonshotdown.js" charset="utf-8"></script> -->
+        <script type="module" src="js/alerta_modal.js" charset="utf-8"></script>
+  </body>
+</html>

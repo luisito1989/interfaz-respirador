@@ -1,0 +1,39 @@
+{
+  "name": "respirador-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "define-property": "^1.0.0",
+    "engine.io-client": "^3.4.1",
+    "engine.io-parser": "^2.2.0",
+    "error-symbol": "^0.1.0",
+    "expand-template": "^1.1.1",
+    "express": "^4.17.1",
+    "for-in": "^1.0.2",
+    "for-own": "^1.0.0",
+    "fs": "0.0.1-security",
+    "fs-constants": "^1.0.0",
+    "github-from-package": "^0.0.0",
+    "has-binary2": "^1.0.3",
+    "has-unicode": "^2.0.1",
+    "info-symbol": "^0.1.0",
+    "ipaddr.js": "^1.9.1",
+    "is-accessor-descriptor": "^1.0.0",
+    "is-buffer": "^1.1.6",
+    "is-data-descriptor": "^1.0.0",
+    "is-descriptor": "^1.0.2",
+    "nodemon": "^2.0.3",
+    "serialport": "^9.0.0",
+    "socket.io": "^2.3.0",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^9.10.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

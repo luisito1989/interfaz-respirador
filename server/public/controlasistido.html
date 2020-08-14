@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Control Asistido - COMARPMG</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/logo.jpg" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/control-form.css">
+    <link rel="stylesheet" href="css/fondomorado.css">
+    <link rel="stylesheet" href="font/css/fontello.css">
+    <link href="css/numpad.css" rel="stylesheet">
+    <script src="js/numpad.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+  <body>
+
+    <a id="stop" class="stop btn btn-danger" role="button" style="color: white">Detener</a>
+    <a id="exit" class="icon-cancel exit" role="button" href="index.html"></a>
+    <!--<a id="shutdownButton" class="icon-off-1 shutdownButton" role="button" style="color: white" data-toggle="modal" data-target="#modalShotdown"></a>-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalHeaderText">Error</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h5 class="modal-body" id="modalBodyText">Error</h5>
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="modalStop" class="btn btn-danger" data-dismiss="modal">Detener equipo</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal -->
+
+    <!-- Modal shotdown -->
+    <div class="modal fade" id="modalShotdown" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Advertencia</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h5 class="modal-body">Usted esta a punto de apagar por completo es sistema.</h5>
+            <h5 class="modal-body">Desea continuar?</h5>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" id="shutdown">Apagar</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal shotdown -->
+
+
+    <div class="container">
+    <div class="row justify-content-center align-self-center">
+        <form id="form" class="border border-light p-5 contenForm" action="">
+
+        <p id="titulo" class="h2 mb-4 text-center">Control Asistido</p>
+
+        <div class="form-row space05">
+            <div class="col">
+                <label>BPM</label>
+                <input id="bpm" type="text" class="form-control" placeholder="Rango 12 - 45">
+            </div>
+            <div class="col">
+                <label>I/E</label>
+                <div class="d-flex">
+                    <input id="ie1" type="text" class="form-control mr-1">
+                    <p class="h3"> / </p>
+                    <input id="ie2" type="text" class="form-control ml-1">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row space05">
+            <div class="col">
+                <label>Volumen <sub>ml</sub></label>
+                <input id="volumen" type="text" class="form-control" placeholder="Rango 200 - 800">
+            </div>
+            <div class="col">
+                <label>Presión <sub>cm H<sub><i>2</i></sub>O</sub></label>
+                <input id="presion" type="text" class="form-control" placeholder="Rango 0 - 40">
+            </div>
+        </div>
+        
+        <div class="form-row space05">
+            <div class="col-mb-4">
+                <label>T<sub><i>h</i></sub></label>
+                <input id="th" type="text" class="form-control" placeholder="Rango 0.2 - 1">
+            </div>
+        </div>
+
+        <div class="form-row space05 opcBttn">
+            <button id="sendData" class="btn btn-success opcButton" data-dismiss="modal" href="grafica-v.html">Iniciar</button>
+        </div>
+
+        </form>
+        <div class="logo"></div>
+
+    </div>
+    
+    </div>
+        <script src="socket.io/socket.io.js" charset="utf-8"></script>
+        <script type="module" src="js/controlasistido.js" charset="utf-8"></script>
+        <script type="module" src="js/botonstop.js" charset="utf-8"></script>
+        <!-- <script type="module" src="js/botonshotdown.js" charset="utf-8"></script> -->
+        <script type="module" src="js/alerta_modal.js" charset="utf-8"></script>
+        <!-- [3 : ATTACH THE NUMPAD TO THE HTML FIELDS] -->
+        <script>
+        window.addEventListener("load", function(){
+            // Bare minimum - provide the ID
+            numpad.attach({
+            id : "bpm",
+            T1: "Rango Respiratorio (BPM)",
+            T2: "Indica la cantidad de ciclos respiratorios por minuto (Breaths per minute)",
+            T3: "Rango recomendado",
+            T4: "Desde 8 hasta 40 BPM"
+            });
+
+            numpad.attach({
+            id : "ie1",
+            T1: "Relacion de tiempo Inspiración / Expiración (I)",
+            T2: "Indica la relación que existe entre el tiempo de inhalación y exalación",
+            T3: "Rango recomendado",
+            T4: "Desde 1:1 a 1:4"
+            });
+
+            numpad.attach({
+            id : "ie2",
+            T1: "Relacion de tiempo Inspiración / Expiración (E)",
+            T2: "Indica la relación que existe entre el tiempo de inhalación y exalación",
+            T3: "Rango recomendado",
+            T4: "Desde 1:1 a 1:4"
+            });
+
+            numpad.attach({
+            id : "volumen",
+            T1: "Volumen del aire (Tidal Volume)",
+            T2: "Indica el volumen de aire suministrado al paciente",
+            T3: "Rango recomendado",
+            T4: "200 a 800 ml"
+            });
+
+            numpad.attach({
+            id : "presion",
+            T1: "Presión Máxima",
+            T2: "Presión máxima permitida en la linea de respiración",
+            T3: "Rango recomendado",
+            T4: "0 a 40 mm H2O"
+            });
+
+            numpad.attach({
+            id : "th",
+            T1: "Tiempo de pausa luego de la inhalación",
+            T2: "Indica la cantidad de tiempo que la maquina mantendrá el aire suministrado al paciente bajo la presión de plateau",
+            T3: "Rango recomendado",
+            T4: "0.2 a 1 seg"
+            });
+        });
+        </script>
+
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Respirador - COMARPMG</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/opciones.css">
+    <link rel="stylesheet" href="css/fondoazul.css">
+    <link rel="shortcut icon" href="img/logo.jpg" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="font/css/fontello.css">
+  </head>
+  <body>
+  <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalHeaderText">Error</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h5 class="modal-body" id="modalBodyText">Error</h5>
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="modalStop" class="btn btn-danger" data-dismiss="modal">Detener equipo</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal -->
+
+<!-- Modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Error</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h5 class="modal-body">Usuario y/o contraseña invalidos</h5>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal -->
+
+<!-- Modal shotdown -->
+    <div class="modal fade" id="modalShotdown" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Advertencia</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h5 class="modal-body">Usted esta a punto de apagar por completo es sistema.</h5>
+            <h5 class="modal-body">Desea continuar?</h5>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" id="shutdown">Apagar</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal shotdown -->
+
+  <!-- Modal login-->
+    <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalHeaderText">Calibración</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h5 class="modal-body">Usuario</h5>
+            <input id="user" type="text" class="form-control mr-1">
+            <h5 class="modal-body">Contraseña</h5>
+            <input id="pass" type="password" class="form-control mr-1">
+            <a id="passError"></a>
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="modalAjuste" class="btn btn-danger" data-dismiss="modal">Aceptar</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal login-->
+
+  <a id="stop" class="stop btn btn-danger" role="button" style="color: white">Detener</a>
+  <!--<a id="shutdownButton" class="icon-off-1 shutdownButton" role="button" style="color: white" data-toggle="modal" data-target="#modalShotdown"></a>-->
+
+  <div class="container-fluid h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <a href="controlasistido.html">
+        <section class="mr-2">
+            <p class="h4 mb-4 text-center mt-3">Control Asistido</p>
+            <div class="imgGroup">
+                <div class="bed"></div>
+                <div class="arrow"></div>
+                <div class="monitor"></div>
+            </div>
+        </section>
+        </a>
+        <a href="controlvolumen.html">
+        <section class="ml-2">
+            <p class="h4 mb-4 text-center mt-3">Control Volumen</P>
+            <div class="imgGroup">
+                <div class="bed"></div>
+                <div class="arrow2"></div>
+                <div class="monitor"></div>
+            </div>
+        </section>
+        </a>
+    </div>
+  </div>
+  <div class="logo"></div>
+  <a id="ajuste" class="icon-cog ajuste" role="button" data-toggle="modal" data-target="#modalLogin"></a>
+
+  <script src="socket.io/socket.io.js" charset="utf-8"></script>
+  <!-- <script type="module" src="js/botonshotdown.js" charset="utf-8"></script> -->
+  <script type="module" src="js/botonstop.js" charset="utf-8"></script>
+  <script type="module" src="js/login.js" charset="utf-8"></script>
+  <script type="module" src="js/alerta_modal.js" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+.container {
+  height: 100%;
+  width: 100%;
+  background: rgb(f0, f0, f0);
+}
+
+.formulario {
+  height: 200px;
+
+}
+
+input {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000000;
+}
+
+.opcBttn {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.opcButton {
+  width: 100px !important;
+  margin: 0 5px 0 5px;
+  border-radius: 30px;
+  font-size: larger;
+}
+
+.opcBtn {
+  margin: 5px 18%;
+  font-size: larger;
+}
+
+.space05{
+  margin-bottom: 0.5rem !important;
+}
+
+.contenForm{
+    width: 50%;
+    min-width: 600px;
+    height: 420px;
+    background-color: rgb(41,74,219, 0.9);
+    border-radius: 15px;
+    margin-top: 5%;
+    color: #fff;
+}
+
+.btn_grafica {
+  position:  absolute;
+  bottom: 20px;
+  right: 200px;
+}
+
+.stop{
+  background-color: #BC1B1B;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.shutdownButton{
+  position: absolute;
+  padding: 5px;
+  top: 20px;
+  right: 35px;
+  border-radius: 50%;
+  font-size: 30px;
+  background-color: #E40B0B;
+}
+
+.exit{
+  background-color: #fff;
+  position: absolute;
+  padding: 5px;
+  top: 20px;
+  left: 20px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #E40B0B;
+}
+
+.logo{
+  background: url('../img/COMARPMG.png');
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+#alertMessage {
+  color: "#ffffff";
+}
+
+@media screen and (max-width:800px) {
+  html, body {
+    background: url("../img/Fondo-morado.jpg") no-repeat center center fixed;
+    background-size: cover;
+    touch-action: manipulation;
+  }
+
+  .logo {
+    visibility: hidden;
+  }
+}
+
+
